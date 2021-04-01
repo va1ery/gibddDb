@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gibddDb", "gibddDb\gibddDb.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gibddDBcore", "gibddDBcore\gibddDBcore.csproj", "{4D01EA54-F1F6-487B-B495-1D17A1BC333D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gibddDBModels", "gibddDBModels\gibddDBModels.csproj", "{2F20C0C6-DF7E-4B24-BF11-E956A5F0F0DE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{4D01EA54-F1F6-487B-B495-1D17A1BC333D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4D01EA54-F1F6-487B-B495-1D17A1BC333D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4D01EA54-F1F6-487B-B495-1D17A1BC333D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F20C0C6-DF7E-4B24-BF11-E956A5F0F0DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F20C0C6-DF7E-4B24-BF11-E956A5F0F0DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F20C0C6-DF7E-4B24-BF11-E956A5F0F0DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F20C0C6-DF7E-4B24-BF11-E956A5F0F0DE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
