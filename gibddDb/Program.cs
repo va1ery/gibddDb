@@ -15,11 +15,9 @@ namespace gibddDb
         static void Main(string[] args)
         {
             BuildOptions();
-            //         Console.WriteLine(_configuration.GetConnectionString("gibddDBManager"));
-            BuildOptions();
+            DeleteAllDrivers();
             InsertDrivers();
             ListInventory();
-
         }
         static void BuildOptions()
         {
@@ -31,14 +29,14 @@ namespace gibddDb
         {
             using (var db = new gibddDbContext(_optionsBuilder.Options))
             {
-                var items = db.Drivers.Take(3).OrderBy(x => x.firstName).ToList();
+                var items = db.Drivers.Take(12).OrderBy(x => x.firstName).ToList();
                 items.ForEach(x => Console.WriteLine($"New Driver: {x.firstName}"));
             }
         }
 
         static void InsertDrivers()
         {
-            var Drivers = new List<Driver>() {
+            var drivers = new List<Driver>() {
                 new Driver() {firstName = "Alonso", lastName = "Hopkins", middleName = "Caleb",},
                 new Driver() {firstName = "Kaydence", lastName = "Sellers", middleName = "Susannah",},
                 new Driver() {firstName = "Finnegan", lastName = "Bray", middleName = "Brighton",},
@@ -46,7 +44,24 @@ namespace gibddDb
 
             using (var db = new gibddDbContext(_optionsBuilder.Options))
             {
-                db.AddRange(Drivers);
+                foreach (var driver in drivers)
+                {
+                    driver.LastModifiedUserId = 1;
+                }
+                db.AddRange(drivers);
+                db.SaveChanges();
+            }
+        }
+        static void DeleteAllDrivers()
+        {
+            using (var db = new gibddDbContext(_optionsBuilder.Options))
+            {
+                var drivers = db.Drivers.ToList();
+                foreach (var driver in drivers)
+                {
+                    driver.LastModifiedUserId = 1;
+                }
+                db.Drivers.RemoveRange(drivers);
                 db.SaveChanges();
             }
         }

@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using gibddDBcore;
 
 namespace gibddDBcore.Migrations
 {
     [DbContext(typeof(gibddDbContext))]
-    partial class gibddDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210403071811_UpdatedDriver_AddedAuditing")]
+    partial class UpdatedDriver_AddedAuditing
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -48,33 +50,28 @@ namespace gibddDBcore.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("description")
-                        .HasMaxLength(250)
-                        .HasColumnType("nvarchar(250)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("email")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("firstName")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("jobname")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("lastName")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("middleName")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("passportNumber")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("phone")
-                        .HasMaxLength(25)
-                        .HasColumnType("nvarchar(25)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("photo")
                         .HasColumnType("nvarchar(max)");
